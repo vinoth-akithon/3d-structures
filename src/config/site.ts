@@ -1,9 +1,9 @@
 // Site configuration
 export const SITE = {
-  title: 'Esskay Structures',
+  title: 'Structures',
   description: 'Precision structural steel 3D modeling, shop drawings, and erection detailing services using Tekla Structures.',
   url: 'https://vinoth-akithon.github.io/steel_detail',
-  author: 'Esskay Structures',
+  author: 'Structures',
 } as const;
 
 export const NAVIGATION = [
