@@ -10,5 +10,5 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
   site: 'https://vinoth-akithon.github.io',
-  base: '/steel_design',
+  base: '/steel_detail',
 });
