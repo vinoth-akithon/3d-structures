@@ -7,10 +7,10 @@ export const SITE = {
 } as const;
 
 export const NAVIGATION = [
-  { name: 'About us', href: 'about' },
-  { name: 'Projects', href: 'projects' },
-  { name: 'Services', href: 'services' },
-  { name: 'Contact', href: 'contact' },
+  { name: 'About us', href: '/about' },
+  { name: 'Projects', href: '/projects' },
+  { name: 'Services', href: '/services' },
+  { name: 'Contact', href: '/contact' },
 ] as const;
 
 export const SOCIAL_LINKS = {
