@@ -2,15 +2,15 @@
 export const SITE = {
   title: 'Esskay Structures',
   description: 'Precision structural steel 3D modeling, shop drawings, and erection detailing services using Tekla Structures.',
-  url: 'https://yourdomain.com',
+  url: 'https://vinoth-akithon.github.io/steel_detail',
   author: 'Esskay Structures',
 } as const;
 
 export const NAVIGATION = [
-  { name: 'About us', href: '/about' },
-  { name: 'Projects', href: '/projects' },
-  { name: 'Services', href: '/services' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'About us', href: 'about' },
+  { name: 'Projects', href: 'projects' },
+  { name: 'Services', href: 'services' },
+  { name: 'Contact', href: 'contact' },
 ] as const;
 
 export const SOCIAL_LINKS = {
