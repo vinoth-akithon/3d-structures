@@ -8,5 +8,7 @@ export default defineConfig({
   integrations: [react()],
   vite: {
     plugins: [tailwindcss()]
-  }
+  },
+  site: 'https://vinoth-akithon.github.io',
+  base: '/steel_design',
 });
