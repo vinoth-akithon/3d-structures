@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/ui/Button.astro';
+/* 
 import PremiumHero from '../components/home/PremiumHero.astro';
 import ServiceHighlights from '../components/home/ServiceHighlights.astro';
 import ImageGrid from '../components/home/ImageGrid.astro';
@@ -9,9 +11,11 @@ import TechnologyInnovation from '../components/home/TechnologyInnovation.astro'
 import ProcessWorkflow from '../components/home/ProcessWorkflow.astro';
 import Testimonials from '../components/home/Testimonials.astro';
 import PremiumCTA from '../components/home/PremiumCTA.astro';
+*/
 ---
 
-<BaseLayout>
+<BaseLayout title="Steel Detailing Services | Precision 3D Modeling" description="Expert structural steel detailing, 3D modeling, and fabrication drawings using Tekla Structures.">
+  <!-- 
   <PremiumHero />
   <ServiceHighlights />
   <ImageGrid />
@@ -21,4 +25,152 @@ import PremiumCTA from '../components/home/PremiumCTA.astro';
   <StatsShowcase />
   <Testimonials />
   <PremiumCTA />
+  -->
+
+  <!-- Custom Steel Detailing Overview Home Page -->
+  
+  <!-- Hero Section (Adapted from PremiumHero) -->
+  <section class="relative min-h-[85vh] flex items-center overflow-hidden bg-slate-900">
+    <div class="absolute inset-0 bg-linear-to-r from-slate-950/95 via-slate-900/90 to-slate-800/80">
+      <!-- We can add a background image later, for now we use the dark gradient the template relies on -->
+    </div>
+
+    <div class="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8 py-24">
+      <div class="max-w-4xl space-y-8 animate-fadeInUp">
+        <div class="inline-flex items-center px-4 py-2 bg-linear-to-r from-blue-600 to-teal-600 text-white text-sm font-semibold rounded-full shadow-lg">
+          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+          </svg>
+          Precision Steel Detailing Services
+        </div>
+        
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+          Translating Engineering Design into
+          <span class="block text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-teal-400 to-blue-400 mt-2">
+            Fabrication Reality
+          </span>
+        </h1>
+        
+        <p class="text-xl md:text-2xl text-slate-300 max-w-2xl leading-relaxed">
+          We specialize in converting structural engineers' approved designs into detailed 3D models and fabrication-ready drawings using advanced tools like Tekla Structures.
+        </p>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 pb-4 border-t border-white/20">
+          <div class="group">
+            <div class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-white to-blue-200 mb-1">100%</div>
+            <div class="text-sm text-slate-300 group-hover:text-teal-300 transition-colors">Tekla Accuracy</div>
+          </div>
+          <div class="group">
+            <div class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-white to-blue-200 mb-1">0mm</div>
+            <div class="text-sm text-slate-300 group-hover:text-teal-300 transition-colors">Clash Tolerance</div>
+          </div>
+          <div class="group">
+            <div class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-white to-blue-200 mb-1">500+</div>
+            <div class="text-sm text-slate-300 group-hover:text-teal-300 transition-colors">Tons Detailed</div>
+          </div>
+          <div class="group">
+            <div class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-linear-to-r from-white to-blue-200 mb-1">24/7</div>
+            <div class="text-sm text-slate-300 group-hover:text-teal-300 transition-colors">Offshore Support</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Services Overview -->
+  <section class="py-24 bg-white relative">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our Core Competencies</h2>
+        <p class="text-lg text-slate-600">Comprehensive steel detailing solutions tailored for structural engineering firms, steel fabricators, and construction companies.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Service 1 -->
+        <div class="bg-slate-50 border border-slate-100 rounded-2xl p-8 hover:shadow-xl transition-all hover:-translate-y-1 duration-300 group">
+          <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">3D Structural Modeling</h3>
+          <p class="text-slate-600 leading-relaxed">High-precision 3D models with Tekla Structures for error-free fabrication and clear visualization.</p>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="bg-slate-50 border border-slate-100 rounded-2xl p-8 hover:shadow-xl transition-all hover:-translate-y-1 duration-300 group">
+          <div class="w-14 h-14 bg-teal-100 text-teal-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Shop & Fabrication Drawings</h3>
+          <p class="text-slate-600 leading-relaxed">Detailed assembly and part drawings ready for the fabrication factory floor.</p>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="bg-slate-50 border border-slate-100 rounded-2xl p-8 hover:shadow-xl transition-all hover:-translate-y-1 duration-300 group">
+          <div class="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Erection Drawings</h3>
+          <p class="text-slate-600 leading-relaxed">Comprehensive plans to ensure seamless and safe site assembly of all steel components.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workflow Section -->
+  <section class="py-24 bg-slate-900 text-white border-t border-slate-800">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row items-center gap-16">
+        <div class="lg:w-1/2 space-y-6">
+          <h2 class="text-3xl md:text-4xl font-bold leading-tight">Our Role in the Construction Lifecycle</h2>
+          <p class="text-slate-300 text-lg">We bridge the gap between structural design and physical implementation. By serving as an offshore detailing partner, we provide top-tier CAD/BIM solutions that keep projects on schedule.</p>
+          
+          <ul class="space-y-4 pt-4">
+            <li class="flex items-start">
+              <div class="shrink-0 w-8 h-8 rounded-full bg-blue-600/20 text-blue-400 flex items-center justify-center font-bold mr-4 outline outline-2 outline-blue-500/30">1</div>
+              <div>
+                <h4 class="font-bold text-lg">Structural Design</h4>
+                <p class="text-slate-400 text-sm">Engineer completes structural design & specifications.</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <div class="shrink-0 w-8 h-8 rounded-full bg-teal-600/20 text-teal-400 flex items-center justify-center font-bold mr-4 outline outline-2 outline-teal-500/30">2</div>
+              <div>
+                <h4 class="font-bold text-lg">Precise Detailing</h4>
+                <p class="text-slate-400 text-sm">We create fabrication models, connections, and extraction data (BOM/CNC).</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <div class="shrink-0 w-8 h-8 rounded-full bg-indigo-600/20 text-indigo-400 flex items-center justify-center font-bold mr-4 outline outline-2 outline-indigo-500/30">3</div>
+              <div>
+                <h4 class="font-bold text-lg">Fabrication & Assembly</h4>
+                <p class="text-slate-400 text-sm">Factories manufacture members; site teams assemble with erection plans.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="lg:w-1/2 relative">
+          <div class="absolute inset-0 bg-linear-to-tl from-blue-600/20 to-teal-600/20 rounded-3xl blur-3xl mix-blend-screen opacity-50"></div>
+          <div class="bg-slate-800/50 backdrop-blur-md rounded-3xl border border-slate-700 p-8 relative shadow-2xl overflow-hidden group">
+             <!-- Abstract structure representation -->
+             <div class="grid grid-cols-4 gap-4 opacity-70 group-hover:opacity-100 transition-opacity">
+               <div class="h-32 bg-slate-700 rounded-lg relative overflow-hidden"><div class="absolute inset-x-0 bottom-0 h-1 bg-blue-500"></div></div>
+               <div class="h-40 bg-slate-700 rounded-lg mt-8 relative overflow-hidden"><div class="absolute inset-x-0 bottom-0 h-1 bg-teal-500"></div></div>
+               <div class="h-48 bg-slate-700 rounded-lg -mt-4 relative overflow-hidden"><div class="absolute inset-x-0 bottom-0 h-1 bg-indigo-500"></div></div>
+               <div class="h-24 bg-slate-700 rounded-lg mt-12 relative overflow-hidden"><div class="absolute inset-x-0 bottom-0 h-1 bg-blue-400"></div></div>
+             </div>
+             <div class="absolute inset-0 bg-linear-to-t from-slate-900/90 to-transparent flex items-end p-8">
+               <div class="text-xl font-bold bg-clip-text text-transparent bg-linear-to-r from-blue-400 to-teal-400">Powered by Tekla Structures</div>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

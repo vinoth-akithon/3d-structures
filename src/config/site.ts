@@ -1,18 +1,16 @@
 // Site configuration
 export const SITE = {
-  title: 'AstroFlow',
-  description: 'Leading provider of optimized logistics and manufacturing solutions with state-of-the-art facilities and industry expertise.',
+  title: 'Esskay Structures',
+  description: 'Precision structural steel 3D modeling, shop drawings, and erection detailing services using Tekla Structures.',
   url: 'https://yourdomain.com',
-  author: 'AstroFlow',
+  author: 'Esskay Structures',
 } as const;
 
 export const NAVIGATION = [
-  { name: 'Home', href: '/' },
-  { name: 'Capabilities', href: '/capabilities' },
-  { name: 'Use Cases', href: '/use-cases' },
-  { name: 'Facilities', href: '/facilities' },
-  { name: 'Request Quote', href: '/rfq' },
-  { name: 'Documentation', href: '/documentation' },
+  { name: 'About us', href: '/about' },
+  { name: 'Projects', href: '/projects' },
+  { name: 'Services', href: '/services' },
+  { name: 'Contact', href: '/contact' },
 ] as const;
 
 export const SOCIAL_LINKS = {

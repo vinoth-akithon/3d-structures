@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import ctaBgImg from '@assets/photo-1565043589221-1a6fd9ae45c7.jpg';
+---
+
+<BaseLayout title="About Us - Esskay Structures">
+  <!-- Hero Section -->
+  <section class="relative h-[70vh] min-h-[500px] flex items-center overflow-hidden">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0">
+      <Image 
+        src={ctaBgImg}
+        alt="Steel detailing office operations"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-linear-to-r from-slate-900/95 via-slate-900/80 to-slate-900/50"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-flex items-center px-4 py-2 mb-6 bg-linear-to-r from-blue-600 to-teal-600 text-white text-sm font-semibold rounded-full shadow-lg">
+          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          Who We Are
+        </div>
+        
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          About <span class="text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-teal-400 to-blue-400">
+            Us
+          </span>
+        </h1>
+        
+        <p class="text-xl md:text-2xl text-slate-200 mb-8 max-w-3xl mx-auto leading-relaxed">
+          We are a dedicated steel detailing service company, specializing in cutting-edge 3D modeling and fabrication-ready engineering solutions.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-24 bg-white">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-lg text-slate-600">Additional content will be added here shortly.</p>
+    </div>
+  </section>
+</BaseLayout>
