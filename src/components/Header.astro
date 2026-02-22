@@ -30,7 +30,7 @@ const isActiveLink = (href: string) : boolean => { return href === currentPathna
         const isActive = isActiveLink(item.href);
         return (
         <a
-          href={item.href}
+          href={`${import.meta.env.BASE_URL}${item.href.slice(1)}`}
           class={`px-4 py-2 text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all relative group ${isActive ? 'nav-active' : ''}`}
         >
           {item.name}
