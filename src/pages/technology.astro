@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import ctaBgImg from '@assets/photo-1565043589221-1a6fd9ae45c7.jpg';
+---
+
+<BaseLayout title="Technology & Capabilities | Duinz">
+  <!-- Hero Section -->
+  <section class="relative h-[70vh] min-h-[500px] flex items-center overflow-hidden">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0">
+      <Image 
+        src={ctaBgImg}
+        alt="Advanced engineering software interface"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-linear-to-r from-slate-900/95 via-slate-900/80 to-slate-900/50"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-flex items-center px-4 py-2 mb-6 bg-linear-to-r from-blue-600 to-teal-600 text-white text-sm font-semibold rounded-full shadow-lg">
+          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          Digital Capability
+        </div>
+        
+        <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          Technology & <span class="text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-teal-400 to-blue-400">
+            Infrastructure
+          </span>
+        </h1>
+        
+        <p class="text-xl md:text-2xl text-slate-200 mb-8 max-w-3xl mx-auto leading-relaxed">
+          State-of-the-art software and highly secure IT environments to execute complex structural projects with speed and reliability.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-24 bg-slate-50 relative">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col lg:flex-row gap-16 items-start">
+        
+        <!-- Left Column: Tekla Structures -->
+        <div class="lg:w-1/2 space-y-6">
+          <div class="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 text-sm font-semibold rounded-full">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
+            </svg>
+            Software
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 leading-tight">
+            Powered by Tekla Structures
+          </h2>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            Our workflow is built around <span class="font-semibold text-slate-800">Tekla Structures</span>, the industry benchmark for structural steel BIM modeling.
+          </p>
+          <p class="text-lg text-slate-600 leading-relaxed">
+            With <span class="font-semibold text-blue-600">12 active licenses</span>, we can scale project teams according to complexity and deadlines without compromising quality.
+          </p>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6">
+            <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm flex items-center">
+              <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center mr-3 shrink-0">
+                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              </div>
+              <span class="text-slate-800 font-medium text-sm">Data-rich 3D models</span>
+            </div>
+            <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm flex items-center">
+              <div class="w-10 h-10 rounded-full bg-teal-50 flex items-center justify-center mr-3 shrink-0">
+                <svg class="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              </div>
+              <span class="text-slate-800 font-medium text-sm">High constructability accuracy</span>
+            </div>
+            <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm flex items-center">
+              <div class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center mr-3 shrink-0">
+                <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              </div>
+              <span class="text-slate-800 font-medium text-sm">Automated fabrication drawings</span>
+            </div>
+            <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm flex items-center">
+              <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center mr-3 shrink-0">
+                <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              </div>
+              <span class="text-slate-800 font-medium text-sm">Efficient revision management</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Digital Infrastructure -->
+        <div class="lg:w-1/2 bg-white rounded-2xl p-8 md:p-12 shadow-xl border border-slate-100 w-full">
+           <h3 class="text-2xl font-bold text-slate-900 mb-8 border-b border-slate-100 pb-4">Digital Infrastructure</h3>
+           <ul class="space-y-6">
+             <li class="flex items-start group">
+               <div class="shrink-0 w-10 h-10 rounded-full bg-slate-50 text-slate-600 flex items-center justify-center mr-4 group-hover:bg-slate-800 group-hover:text-white transition-colors">
+                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"></path></svg>
+               </div>
+               <div>
+                 <h4 class="font-semibold text-lg text-slate-900 mt-1.5">High-speed internet connectivity</h4>
+               </div>
+             </li>
+             <li class="flex items-start group">
+               <div class="shrink-0 w-10 h-10 rounded-full bg-slate-50 text-slate-600 flex items-center justify-center mr-4 group-hover:bg-slate-800 group-hover:text-white transition-colors">
+                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
+               </div>
+               <div>
+                 <h4 class="font-semibold text-lg text-slate-900 mt-1.5">Secure cloud storage (OneDrive)</h4>
+               </div>
+             </li>
+             <li class="flex items-start group">
+               <div class="shrink-0 w-10 h-10 rounded-full bg-slate-50 text-slate-600 flex items-center justify-center mr-4 group-hover:bg-slate-800 group-hover:text-white transition-colors">
+                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+               </div>
+               <div>
+                 <h4 class="font-semibold text-lg text-slate-900 mt-1.5">Structured file-sharing systems</h4>
+               </div>
+             </li>
+             <li class="flex items-start group">
+               <div class="shrink-0 w-10 h-10 rounded-full bg-slate-50 text-slate-600 flex items-center justify-center mr-4 group-hover:bg-slate-800 group-hover:text-white transition-colors">
+                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+               </div>
+               <div>
+                 <h4 class="font-semibold text-lg text-slate-900 mt-1.5">24-hour power backup</h4>
+               </div>
+             </li>
+             <li class="flex items-start group">
+               <div class="shrink-0 w-10 h-10 rounded-full bg-slate-50 text-slate-600 flex items-center justify-center mr-4 group-hover:bg-slate-800 group-hover:text-white transition-colors">
+                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+               </div>
+               <div>
+                 <h4 class="font-semibold text-lg text-slate-900 mt-1.5">Redundant data protection</h4>
+               </div>
+             </li>
+           </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

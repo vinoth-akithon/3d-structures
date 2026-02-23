@@ -1,6 +1,9 @@
 ---
-import { NAVIGATION, SOCIAL_LINKS, SITE } from '@config/site';
-import { Package, Linkedin, Twitter, Facebook } from 'lucide-react';
+import { NAVIGATION, SOCIAL_LINKS, SITE, CONTACT_INFO } from '@config/site';
+import { Package, Linkedin, Twitter, Facebook, Mail, Phone, MapPin } from 'lucide-react';
+
+const baseUrl = import.meta.env.BASE_URL;
+const normalizeLink = (href: string) => `${baseUrl}${href.replace(/^\//, '')}`;
 ---
 
 <footer class="bg-slate-900 text-slate-300">
@@ -8,19 +11,35 @@ import { Package, Linkedin, Twitter, Facebook } from 'lucide-react';
     <div class="grid grid-cols-1 gap-12 lg:grid-cols-4">
       <!-- Company Info -->
       <div class="lg:col-span-1 space-y-6">
-        <a href="/" class="flex items-center space-x-3 group">
+        <a href={baseUrl} class="flex items-center space-x-3 group">
           <div class="flex items-center justify-center w-12 h-12 rounded-lg bg-linear-to-br from-blue-600 to-teal-600">
             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
             </svg>
           </div>
           <span class="text-2xl font-bold text-white">
-            Structures
+            Duinz
           </span>
         </a>
         <p class="text-sm text-slate-400 leading-relaxed max-w-xs">
           {SITE.description}
         </p>
+        <div class="space-y-3">
+          <div class="flex items-center text-sm text-slate-400">
+            <MapPin className="w-4 h-4 mr-3 text-blue-500" />
+            <span>{CONTACT_INFO.locations.join(' | ')}</span>
+          </div>
+          <div class="flex items-center text-sm text-slate-400">
+            <Mail className="w-4 h-4 mr-3 text-blue-500" />
+            <a href={`mailto:${CONTACT_INFO.email}`} class="hover:text-blue-400 transition-colors">{CONTACT_INFO.email}</a>
+          </div>
+          {CONTACT_INFO.phone && (
+          <div class="flex items-center text-sm text-slate-400">
+            <Phone className="w-4 h-4 mr-3 text-blue-500" />
+            <a href={`tel:${CONTACT_INFO.phone}`} class="hover:text-blue-400 transition-colors">{CONTACT_INFO.phone}</a>
+          </div>
+          )}
+        </div>
         <div class="flex space-x-4">
           <a
             href={SOCIAL_LINKS.linkedin}
@@ -55,7 +74,7 @@ import { Package, Linkedin, Twitter, Facebook } from 'lucide-react';
           {NAVIGATION.map((item) => (
             <li>
               <a
-                href={item.href}
+                href={normalizeLink(item.href)}
                 class="text-sm text-slate-400 hover:text-blue-400 transition-colors inline-flex items-center group"
               >
                 <span class="w-0 group-hover:w-2 h-0.5 bg-blue-400 transition-all mr-0 group-hover:mr-2"></span>
@@ -73,25 +92,25 @@ import { Package, Linkedin, Twitter, Facebook } from 'lucide-react';
         </h3>
         <ul class="space-y-3">
           <li>
-            <a href="/services" class="text-sm text-slate-400 hover:text-blue-400 transition-colors inline-flex items-center group">
+            <a href={normalizeLink('/services')} class="text-sm text-slate-400 hover:text-blue-400 transition-colors inline-flex items-center group">
               <span class="w-0 group-hover:w-2 h-0.5 bg-blue-400 transition-all mr-0 group-hover:mr-2"></span>
               3D Structural Modeling
             </a>
           </li>
           <li>
-            <a href="/services" class="text-sm text-slate-400 hover:text-blue-400 transition-colors inline-flex items-center group">
+            <a href={normalizeLink('/services')} class="text-sm text-slate-400 hover:text-blue-400 transition-colors inline-flex items-center group">
               <span class="w-0 group-hover:w-2 h-0.5 bg-blue-400 transition-all mr-0 group-hover:mr-2"></span>
               Shop & Fabrication Drawings
             </a>
           </li>
           <li>
-            <a href="/services" class="text-sm text-slate-400 hover:text-blue-400 transition-colors inline-flex items-center group">
+            <a href={normalizeLink('/services')} class="text-sm text-slate-400 hover:text-blue-400 transition-colors inline-flex items-center group">
               <span class="w-0 group-hover:w-2 h-0.5 bg-blue-400 transition-all mr-0 group-hover:mr-2"></span>
               Erection Drawings
             </a>
           </li>
           <li>
-            <a href="/services" class="text-sm text-slate-400 hover:text-blue-400 transition-colors inline-flex items-center group">
+            <a href={normalizeLink('/services')} class="text-sm text-slate-400 hover:text-blue-400 transition-colors inline-flex items-center group">
               <span class="w-0 group-hover:w-2 h-0.5 bg-blue-400 transition-all mr-0 group-hover:mr-2"></span>
               Connection Detailing
             </a>
@@ -106,13 +125,13 @@ import { Package, Linkedin, Twitter, Facebook } from 'lucide-react';
         </h3>
         <ul class="space-y-3 text-sm">
           <li>
-            <a href="/contact" class="text-slate-400 hover:text-blue-400 transition-colors inline-flex items-center group">
+            <a href={normalizeLink('/contact')} class="text-slate-400 hover:text-blue-400 transition-colors inline-flex items-center group">
               <span class="w-0 group-hover:w-2 h-0.5 bg-blue-400 transition-all mr-0 group-hover:mr-2"></span>
               Contact Us
             </a>
           </li>
           <li>
-            <a href="/projects" class="text-slate-400 hover:text-blue-400 transition-colors inline-flex items-center group">
+            <a href={normalizeLink('/projects')} class="text-slate-400 hover:text-blue-400 transition-colors inline-flex items-center group">
               <span class="w-0 group-hover:w-2 h-0.5 bg-blue-400 transition-all mr-0 group-hover:mr-2"></span>
               View Our Projects
             </a>
@@ -121,10 +140,10 @@ import { Package, Linkedin, Twitter, Facebook } from 'lucide-react';
         
         <div class="mt-8">
           <a
-            href="/contact"
+            href={normalizeLink('/contact#contact-form')}
             class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-linear-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-lg shadow-lg hover:shadow-xl transition-all"
           >
-            Get Started
+            Work With Us
           </a>
         </div>
       </div>
@@ -137,15 +156,15 @@ import { Package, Linkedin, Twitter, Facebook } from 'lucide-react';
           &copy; {new Date().getFullYear()} {SITE.author}. All rights reserved.
         </p>
         <div class="flex items-center space-x-6 text-sm">
-          <a href="/" class="text-slate-400 hover:text-blue-400 transition-colors">
+          <a href={normalizeLink('/')} class="text-slate-400 hover:text-blue-400 transition-colors">
             Privacy Policy
           </a>
           <span class="text-slate-700">•</span>
-          <a href="/" class="text-slate-400 hover:text-blue-400 transition-colors">
+          <a href={normalizeLink('/')} class="text-slate-400 hover:text-blue-400 transition-colors">
             Terms of Service
           </a>
           <span class="text-slate-700">•</span>
-          <a href="/" class="text-slate-400 hover:text-blue-400 transition-colors">
+          <a href={normalizeLink('/')} class="text-slate-400 hover:text-blue-400 transition-colors">
             Cookie Policy
           </a>
         </div>

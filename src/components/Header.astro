@@ -12,14 +12,14 @@ const isActiveLink = (href: string) : boolean => { return href === currentPathna
   <nav class="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
     <!-- Logo -->
     <div class="flex items-center">
-      <a href='/steel_detail' class="flex items-center space-x-3 group">
+      <a href=`${import.meta.env.BASE_URL}` class="flex items-center space-x-3 group">
         <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-linear-to-br from-blue-600 to-teal-600 group-hover:scale-110 transition-transform">
           <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
           </svg>
         </div>
         <span class="text-2xl font-bold bg-linear-to-r from-blue-800 to-teal-600 bg-clip-text text-transparent">
-          Structures
+          Duinz
         </span>
       </a>
     </div>
@@ -27,10 +27,13 @@ const isActiveLink = (href: string) : boolean => { return href === currentPathna
     <!-- Desktop Navigation -->
     <div class="hidden lg:flex lg:items-center lg:space-x-1">
       {NAVIGATION.map((item) => {
-        const isActive = isActiveLink(item.href);
+        // Because Astro's BASE_URL includes trailing slash differently, we need to normalize 
+        // Or simply construct the full path and check it against currentPathname
+        const fullHref = `${import.meta.env.BASE_URL}${item.href === '/' ? '' : item.href.replace(/^\//, '')}`;
+        const isActive = currentPathname === fullHref || currentPathname === fullHref + '/';
         return (
         <a
-          href={`${import.meta.env.BASE_URL}${item.href.slice(1)}`}
+          href={fullHref}
           class={`px-4 py-2 text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all relative group ${isActive ? 'nav-active' : ''}`}
         >
           {item.name}
@@ -42,10 +45,10 @@ const isActiveLink = (href: string) : boolean => { return href === currentPathna
     <!-- CTA Button -->
     <div class="hidden lg:flex lg:items-center lg:space-x-4">
       <a
-        href="/rfq"
+        href={`${import.meta.env.BASE_URL}contact#contact-form`}
         class="inline-flex items-center px-6 py-2.5 text-sm font-semibold text-white bg-linear-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-lg shadow-md hover:shadow-lg transition-all"
       >
-        Request Quote
+        Work With Us
       </a>
     </div>
 

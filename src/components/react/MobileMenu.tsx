@@ -19,20 +19,22 @@ export default function MobileMenu() {
           <Dialog.Title className="sr-only">Navigation Menu</Dialog.Title>
           <Dialog.Description className="sr-only">Main navigation menu</Dialog.Description>
           <div className="container mx-auto px-4 py-6 space-y-2">
-            {NAVIGATION.map((item) => (
+            {NAVIGATION.map((item) => {
+              const fullHref = `${import.meta.env.BASE_URL}${(item.href as string) === '/' ? '' : item.href.replace(/^\//, '')}`;
+              return (
               <Dialog.Close asChild key={item.href}>
                 <a
-                  href={item.href}
+                  href={fullHref}
                   className="block px-4 py-3 text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
                 >
                   {item.name}
                 </a>
               </Dialog.Close>
-            ))}
+            )})}
             <div className="pt-4">
               <Dialog.Close asChild>
                 <a
-                  href="/rfq"
+                  href={`${import.meta.env.BASE_URL}contact`}
                   className="block text-center px-6 py-3 text-sm font-semibold text-white bg-linear-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-lg shadow-md transition-all"
                 >
                   Request Quote
