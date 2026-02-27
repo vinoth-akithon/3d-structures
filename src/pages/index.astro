@@ -3,12 +3,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Button from '../components/ui/Button.astro';
 import { Image } from 'astro:assets';
 import heroBgImg from '@assets/images/PHOTO 13.jpg';
-import ind1Img from '@assets/images/1.jpg';
-import ind2Img from '@assets/images/2.jpg';
-import ind3Img from '@assets/images/3.jpg';
-import ind4Img from '@assets/images/4.jpg';
-import ind5Img from '@assets/images/PHOTO 35.jpg';
-import ind6Img from '@assets/images/PHOTO 36.jpg';
+import lifecycleImg from '@assets/images/lifecycle.webp';
+import ind1Img from '@assets/images/industrial.webp';
+import ind2Img from '@assets/images/commercial_buildings.webp';
+import ind3Img from '@assets/images/oil_and_gas.webp';
+import ind4Img from '@assets/images/stadium.webp';
+import ind5Img from '@assets/images/warehouse.webp';
+import ind6Img from '@assets/images/miscellaneous_and_architectural_steel.webp';
 /* 
 import PremiumHero from '../components/home/PremiumHero.astro';
 import ServiceHighlights from '../components/home/ServiceHighlights.astro';
@@ -135,7 +136,7 @@ import PremiumCTA from '../components/home/PremiumCTA.astro';
           <div class="absolute inset-0 bg-slate-50/50 backdrop-blur-md rounded-3xl border border-slate-200 shadow-2xl overflow-hidden group">
              <!-- Real image representation -->
              <Image 
-                src={import('@assets/images/PHOTO 10.jpg')}
+                src={lifecycleImg}
                 alt="Steel construction lifecycle"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
              />
@@ -194,7 +195,7 @@ import PremiumCTA from '../components/home/PremiumCTA.astro';
           
           <div class="relative z-10 flex items-center">
             <div class="w-10 h-10 rounded-full bg-blue-500/20 text-blue-300 backdrop-blur-xs flex items-center justify-center mr-4 border border-blue-400/30 shrink-0">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.99 7.99 0 0120 13a7.98 7.98 0 01-2.343 5.657z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14l.879 2.121z"></path></svg>
             </div>
             <h3 class="text-xl font-bold text-white tracking-wide">Oil & Gas Facilities</h3>
           </div>
@@ -202,14 +203,14 @@ import PremiumCTA from '../components/home/PremiumCTA.astro';
 
         <!-- Industry 4 -->
         <div class="relative rounded-2xl shadow-sm border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group overflow-hidden h-64 flex flex-col justify-end p-6">
-          <Image src={ind4Img} alt="Power & Energy Projects" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          <Image src={ind4Img} alt="Stadiums" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
           <div class="absolute inset-0 bg-linear-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
           
           <div class="relative z-10 flex items-center">
             <div class="w-10 h-10 rounded-full bg-blue-500/20 text-blue-300 backdrop-blur-xs flex items-center justify-center mr-4 border border-blue-400/30 shrink-0">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.382-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path></svg>
             </div>
-            <h3 class="text-xl font-bold text-white tracking-wide">Power & Energy Projects</h3>
+            <h3 class="text-xl font-bold text-white tracking-wide">Stadiums</h3>
           </div>
         </div>
 
