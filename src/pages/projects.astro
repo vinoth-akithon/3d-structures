@@ -177,10 +177,10 @@ const countries = [
       <!-- Centered Tab Navigation -->
       <div class="flex justify-center mb-12">
         <div class="relative inline-flex p-1.5 bg-white rounded-2xl shadow-md border border-slate-200 gap-1 flex-wrap justify-center">
-          <!-- Active Tab Slider -->
+          <!-- Active Tab Slider (hidden on mobile, shown on sm+) -->
           <div 
             id="tab-slider" 
-            class="absolute bg-linear-to-r from-blue-600 to-teal-600 rounded-xl transition-all duration-300 ease-out z-0"
+            class="hidden sm:block absolute bg-linear-to-r from-blue-600 to-teal-600 rounded-xl transition-all duration-300 ease-out z-0"
             style="top: 6px; left: 6px; bottom: 6px; width: 0;"
           ></div>
 
@@ -189,9 +189,9 @@ const countries = [
               type="button"
               data-tab={c.id}
               class:list={[
-                'tab-btn relative px-6 py-2.5 rounded-xl text-sm font-semibold transition-colors duration-300 whitespace-nowrap z-10',
+                'tab-btn relative px-6 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 whitespace-nowrap z-10',
                 i === 0
-                  ? 'text-white' 
+                  ? 'text-white sm:bg-transparent bg-gradient-to-r from-blue-600 to-teal-600 sm:from-transparent sm:to-transparent'
                   : 'text-slate-500 hover:text-slate-800',
               ]}
             >
@@ -292,8 +292,10 @@ const countries = [
   const panels  = document.querySelectorAll<HTMLElement>('.country-panel');
   const slider  = document.getElementById('tab-slider') as HTMLElement;
 
+  const isMobile = () => window.innerWidth < 640; // sm breakpoint
+
   function updateSlider(tabBtn: HTMLButtonElement) {
-    if (!slider) return;
+    if (!slider || isMobile()) return;
     slider.style.width = `${tabBtn.offsetWidth}px`;
     slider.style.left = `${tabBtn.offsetLeft}px`;
   }
@@ -306,6 +308,10 @@ const countries = [
       btn.classList.toggle('text-white', active);
       btn.classList.toggle('text-slate-500', !active);
       btn.classList.toggle('hover:text-slate-800', !active);
+      // Mobile: toggle the gradient background directly on the button
+      btn.classList.toggle('bg-gradient-to-r', active && isMobile());
+      btn.classList.toggle('from-blue-600', active && isMobile());
+      btn.classList.toggle('to-teal-600', active && isMobile());
       
       if (active) activeBtn = btn;
     });
@@ -325,11 +331,15 @@ const countries = [
     });
   }
 
-  // Initialize slider position
+  // Initialize slider position + set proper mobile state for first button
   const firstActive = document.querySelector('.tab-btn.text-white') as HTMLButtonElement;
   if (firstActive) {
-    // Wait for a frame to ensure layout is ready
-    requestAnimationFrame(() => updateSlider(firstActive));
+    if (isMobile()) {
+      firstActive.classList.add('bg-gradient-to-r', 'from-blue-600', 'to-teal-600');
+    } else {
+      // Wait for a frame to ensure layout is ready
+      requestAnimationFrame(() => updateSlider(firstActive));
+    }
   }
 
   tabBtns.forEach((btn) => {
@@ -341,7 +351,22 @@ const countries = [
   // Handle window resize to keep slider aligned
   window.addEventListener('resize', () => {
     const active = document.querySelector('.tab-btn.text-white') as HTMLButtonElement;
-    if (active) updateSlider(active);
+    if (!active) return;
+    if (isMobile()) {
+      // On mobile, ensure gradient is on active, removed from others
+      tabBtns.forEach((btn) => {
+        const isActive = btn === active;
+        btn.classList.toggle('bg-gradient-to-r', isActive);
+        btn.classList.toggle('from-blue-600', isActive);
+        btn.classList.toggle('to-teal-600', isActive);
+      });
+    } else {
+      // On desktop, remove mobile gradient classes and use slider
+      tabBtns.forEach((btn) => {
+        btn.classList.remove('bg-gradient-to-r', 'from-blue-600', 'to-teal-600');
+      });
+      updateSlider(active);
+    }
   });
 
   // ── Lightbox ───────────────────────────────────────────────────────────────
