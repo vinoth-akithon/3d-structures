@@ -1,48 +1,406 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
+
+// Hero background
 import ctaBgImg from '@assets/images/PHOTO 35.jpg';
+
+// New Zealand projects
+import nzAMP from '@assets/images/projects/NZ/AMP.png';
+import nzWakefield1 from '@assets/images/projects/NZ/C872 WAKEFIELD STREET HOTEL.png';
+import nzWakefield2 from '@assets/images/projects/NZ/C872 WAKEFIELD STREET HOTEL-2.png';
+import nzElmwood from '@assets/images/projects/NZ/Elmwood.png';
+import nzFavona from '@assets/images/projects/NZ/Favona Road Warehouse -B 1 (Warehouse Building).png';
+import nzHamilton from '@assets/images/projects/NZ/HAMILTON STREET.png';
+import nzIgnatius from '@assets/images/projects/NZ/Ignatius.png';
+import nzKingsCollege from '@assets/images/projects/NZ/Kings College 2.png';
+import nzNZPost from '@assets/images/projects/NZ/NZ Post.png';
+import nzNeilson from '@assets/images/projects/NZ/Neilson-A.png';
+import nzOrion from '@assets/images/projects/NZ/Orion-A.png';
+import nzPuhinui from '@assets/images/projects/NZ/Puhinui.png';
+import nzSaintKentigern from '@assets/images/projects/NZ/Saint Kentigern, Shore Road Campus.webp';
+import nzSavill1 from '@assets/images/projects/NZ/Savill Road Warehouse -A 1 (Warehouse Building).png';
+import nzSavill2 from '@assets/images/projects/NZ/Savill Road Warehouse -B 2 (Warehouse Building).png';
+import nzTravelyan from '@assets/images/projects/NZ/Travelyan.png';
+import nzYarrow from '@assets/images/projects/NZ/Yarrow stadium.png';
+
+// Australia projects
+import ausBroadway from '@assets/images/projects/Aus/BROADWAY ON THE BAY.png';
+import ausDordaak1 from '@assets/images/projects/Aus/DORDAAK KEPUP.png';
+import ausDordaak2 from '@assets/images/projects/Aus/Dordaak Kepap 1.png';
+import ausDanMurphy from '@assets/images/projects/Aus/Dan Murphy 2 (commercial Building).png';
+import ausDelahey from '@assets/images/projects/Aus/Delahey Sports Pavilion-80 2 (commercial Building).png';
+import ausHalesworth from '@assets/images/projects/Aus/Halesworth Sports Pavilion 1 (commercial Building).png';
+import ausMilne from '@assets/images/projects/Aus/Milne Feeds Building 1 (commercial Building).png';
+import ausNewNorcia from '@assets/images/projects/Aus/NEW NORCIA DEEP SPACE GROUND STATION.png';
+import ausProposed from '@assets/images/projects/Aus/PROPOSED UNITS  DEVELOPMENT (90-92 McKINNON RD).png';
+import ausPascoe from '@assets/images/projects/Aus/Pascoe Vale.png';
+import ausRockingham from '@assets/images/projects/Aus/Rockingham 1 (Commercial Building).png';
+import ausSalvado from '@assets/images/projects/Aus/Salvado Catholic College.png';
+import ausStargate from '@assets/images/projects/Aus/Stargate Baldivis 1 (Commercial Building).png';
+
+// Middle East projects (flat — no sub-groups)
+import me917 from '@assets/images/projects/Middle East Projects/917/Screenshot_7680x4320_20260226143359.png';
+import meCLC from '@assets/images/projects/Middle East Projects/CLC/Screenshot_7680x4320_20260226144041.png';
+import meELBE1 from '@assets/images/projects/Middle East Projects/ELBE/Screenshot_7680x4320_20260226140914.PNG';
+import meELBE2 from '@assets/images/projects/Middle East Projects/ELBE/Screenshot_7680x4320_20260226141251.PNG';
+
+// Singapore projects
+import sgLNG1 from '@assets/images/projects/Singapore/LNG Canada Project 1.png';
+import sgLNG2 from '@assets/images/projects/Singapore/LNG Canada Project 2.png';
+import sgPhoto from '@assets/images/projects/Singapore/PHOTO 05.jpg';
+
+const countries = [
+  {
+    id: 'new-zealand',
+    label: 'New Zealand',
+    description: 'Structural steel detailing across commercial, stadium, and warehouse developments throughout New Zealand.',
+    projects: [
+      { img: nzAMP, name: 'AMP Centre' },
+      { img: nzWakefield1, name: 'C872 Wakefield Street Hotel' },
+      { img: nzWakefield2, name: 'C872 Wakefield Street Hotel – View 2' },
+      { img: nzElmwood, name: 'Elmwood' },
+      { img: nzFavona, name: 'Favona Road Warehouse' },
+      { img: nzHamilton, name: 'Hamilton Street' },
+      { img: nzIgnatius, name: 'Ignatius' },
+      { img: nzKingsCollege, name: "King's College" },
+      { img: nzNZPost, name: 'NZ Post' },
+      { img: nzNeilson, name: 'Neilson' },
+      { img: nzOrion, name: 'Orion' },
+      { img: nzPuhinui, name: 'Puhinui' },
+      { img: nzSaintKentigern, name: 'Saint Kentigern, Shore Road Campus' },
+      { img: nzSavill1, name: 'Savill Road Warehouse – Block A' },
+      { img: nzSavill2, name: 'Savill Road Warehouse – Block B' },
+      { img: nzTravelyan, name: 'Trevelyan' },
+      { img: nzYarrow, name: 'Yarrow Stadium' },
+    ],
+  },
+  {
+    id: 'australia',
+    label: 'Australia',
+    description: 'From sports pavilions and educational institutions to commercial buildings and deep-space stations across Australia.',
+    projects: [
+      { img: ausBroadway, name: 'Broadway on the Bay' },
+      { img: ausDordaak1, name: 'Dordaak Kepup' },
+      { img: ausDordaak2, name: 'Dordaak Kepap – View 2' },
+      { img: ausDanMurphy, name: 'Dan Murphy – Commercial Building' },
+      { img: ausDelahey, name: 'Delahey Sports Pavilion' },
+      { img: ausHalesworth, name: 'Halesworth Sports Pavilion' },
+      { img: ausMilne, name: 'Milne Feeds Building' },
+      { img: ausNewNorcia, name: 'New Norcia Deep Space Ground Station' },
+      { img: ausProposed, name: 'Proposed Units Development – McKinnon Rd' },
+      { img: ausPascoe, name: 'Pascoe Vale' },
+      { img: ausRockingham, name: 'Rockingham – Commercial Building' },
+      { img: ausSalvado, name: 'Salvado Catholic College' },
+      { img: ausStargate, name: 'Stargate Baldivis – Commercial Building' },
+    ],
+  },
+  {
+    id: 'middle-east',
+    label: 'Middle East',
+    description: 'High-complexity structural steel detailing for landmark projects across the Middle East region.',
+    projects: [
+      { img: meELBE1, name: 'ELBE – View 1' },
+      { img: meELBE2, name: 'ELBE – View 2' },
+      { img: me917, name: 'Project 917' },
+      { img: meCLC, name: 'CLC' },
+    ],
+  },
+  {
+    id: 'singapore',
+    label: 'Singapore',
+    description: 'Precision detailing for energy and infrastructure projects supporting Singapore and the broader Asia-Pacific region.',
+    projects: [
+      { img: sgLNG1, name: 'LNG Canada – View 1' },
+      { img: sgLNG2, name: 'LNG Canada – View 2' },
+      { img: sgPhoto, name: 'Singapore Steel Project' },
+    ],
+  },
+];
 ---
 
-<BaseLayout title="Our Projects - Esskay Structures">
-  <!-- Hero Section -->
+<BaseLayout
+  title="Our Projects | Duinz Engineering Services"
+  description="Explore Duinz Engineering's structural steel detailing projects across New Zealand, Australia, the Middle East, and Singapore."
+>
+  <!-- Hero Section (unchanged) -->
   <section class="relative h-[70vh] min-h-[500px] flex items-center overflow-hidden">
-    <!-- Background Image with Overlay -->
     <div class="absolute inset-0">
-      <Image 
+      <Image
         src={ctaBgImg}
         alt="Steel structures construction sites"
         class="w-full h-full object-cover"
+        width={1920}
+        height={1080}
+        fetchpriority="high"
       />
       <div class="absolute inset-0 bg-linear-to-r from-slate-900/95 via-slate-900/80 to-slate-900/50"></div>
     </div>
 
-    <!-- Content -->
     <div class="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto text-center">
         <div class="inline-flex items-center px-4 py-2 mb-6 bg-linear-to-r from-blue-600 to-teal-600 text-white text-sm font-semibold rounded-full shadow-lg">
           <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          Our Portfolio
+          Global Portfolio
         </div>
-        
+
         <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-          Featured <span class="text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-teal-400 to-blue-400">
+          Featured
+          <span class="text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-teal-400 to-blue-400">
             Projects
           </span>
         </h1>
-        
-        <p class="text-xl md:text-2xl text-slate-200 mb-8 max-w-3xl mx-auto leading-relaxed">
-          Explore our track record of accurately detailed structures for commercial, industrial, and specialized developments worldwide.
+
+        <p class="text-xl md:text-2xl text-slate-200 mb-10 max-w-3xl mx-auto leading-relaxed">
+          Explore our track record of accurately detailed structures for commercial, industrial, and specialised developments across the globe.
         </p>
+
+        <!-- Project count strip -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
+          {countries.map((c) => (
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3 border border-white/20">
+              <div class="text-2xl font-bold text-white">{c.projects.length}</div>
+              <div class="text-xs text-slate-300 mt-0.5">{c.label}</div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </section>
-  
-  <section class="py-24 bg-white">
-    <div class="container mx-auto px-4 text-center">
-      <p class="text-lg text-slate-600">Additional content will be added here shortly.</p>
+
+  <!-- ─── TAB GALLERY SECTION ─── -->
+  <section class="py-16 bg-slate-50 border-t border-slate-100 min-h-screen">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Centered Tab Navigation -->
+      <div class="flex justify-center mb-12">
+        <div class="relative inline-flex p-1.5 bg-white rounded-2xl shadow-md border border-slate-200 gap-1 flex-wrap justify-center">
+          <!-- Active Tab Slider -->
+          <div 
+            id="tab-slider" 
+            class="absolute bg-linear-to-r from-blue-600 to-teal-600 rounded-xl transition-all duration-300 ease-out z-0"
+            style="top: 6px; left: 6px; bottom: 6px; width: 0;"
+          ></div>
+
+          {countries.map((c, i) => (
+            <button
+              type="button"
+              data-tab={c.id}
+              class:list={[
+                'tab-btn relative px-6 py-2.5 rounded-xl text-sm font-semibold transition-colors duration-300 whitespace-nowrap z-10',
+                i === 0
+                  ? 'text-white' 
+                  : 'text-slate-500 hover:text-slate-800',
+              ]}
+            >
+              {c.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Country Panels -->
+      {countries.map((c, i) => (
+        <div
+          id={`panel-${c.id}`}
+          data-panel={c.id}
+          class:list={['country-panel', i !== 0 && 'hidden']}
+        >
+          <!-- Panel header -->
+          <div class="text-center mb-10">
+            <p class="text-slate-500 max-w-xl mx-auto text-sm leading-relaxed">{c.description}</p>
+          </div>
+
+          <!-- Project image grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {c.projects.map((p, j) => (
+              <div class="group relative rounded-xl overflow-hidden aspect-[4/3] shadow-sm border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-slate-200 cursor-zoom-in"
+                data-name={p.name}
+              >
+                <Image
+                  src={p.img}
+                  alt={p.name}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  width={480}
+                  height={360}
+                  loading={i === 0 && j < 8 ? 'eager' : 'lazy'}
+                />
+                <!-- Hover overlay -->
+                <div class="absolute inset-0 bg-linear-to-t from-slate-900/85 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute bottom-0 left-0 right-0 px-4 py-3 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                  <p class="text-white text-sm font-semibold leading-snug drop-shadow">{p.name}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
   </section>
+
+  <!-- Lightbox overlay -->
+  <div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/90 backdrop-blur-sm p-4" role="dialog" aria-modal="true" aria-label="Project image viewer">
+    <button id="lb-close" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition-colors" aria-label="Close">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+    <button id="lb-prev" class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition-colors" aria-label="Previous">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+    </button>
+    <button id="lb-next" class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition-colors" aria-label="Next">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+    </button>
+    <div class="flex flex-col items-center max-w-5xl w-full">
+      <img id="lb-img" src="" alt="" class="max-h-[80vh] max-w-full rounded-xl shadow-2xl object-contain" />
+      <p id="lb-caption" class="mt-4 text-slate-300 text-sm font-medium"></p>
+      <p id="lb-counter" class="mt-1 text-slate-500 text-xs"></p>
+    </div>
+  </div>
+
 </BaseLayout>
+
+
+<style>
+  html { scroll-behavior: smooth; }
+
+  .country-panel {
+    animation: panelEnter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .country-panel.hidden {
+    display: none;
+  }
+  @keyframes panelEnter {
+    from { 
+      opacity: 0; 
+      transform: translateY(10px) scale(0.98); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0) scale(1); 
+    }
+  }
+
+  #lightbox:not(.hidden) {
+    display: flex;
+  }
+</style>
+
+<script>
+  // ── Tab switching ──────────────────────────────────────────────────────────
+  const tabBtns = document.querySelectorAll<HTMLButtonElement>('.tab-btn');
+  const panels  = document.querySelectorAll<HTMLElement>('.country-panel');
+  const slider  = document.getElementById('tab-slider') as HTMLElement;
+
+  function updateSlider(tabBtn: HTMLButtonElement) {
+    if (!slider) return;
+    slider.style.width = `${tabBtn.offsetWidth}px`;
+    slider.style.left = `${tabBtn.offsetLeft}px`;
+  }
+
+  function activateTab(tabId: string) {
+    let activeBtn: HTMLButtonElement | null = null;
+    
+    tabBtns.forEach((btn) => {
+      const active = btn.dataset.tab === tabId;
+      btn.classList.toggle('text-white', active);
+      btn.classList.toggle('text-slate-500', !active);
+      btn.classList.toggle('hover:text-slate-800', !active);
+      
+      if (active) activeBtn = btn;
+    });
+
+    if (activeBtn) updateSlider(activeBtn);
+
+    panels.forEach((panel) => {
+      if (panel.dataset.panel === tabId) {
+        panel.classList.remove('hidden');
+        // Re-trigger animation
+        panel.style.animation = 'none';
+        panel.offsetHeight; // reflow
+        panel.style.animation = '';
+      } else {
+        panel.classList.add('hidden');
+      }
+    });
+  }
+
+  // Initialize slider position
+  const firstActive = document.querySelector('.tab-btn.text-white') as HTMLButtonElement;
+  if (firstActive) {
+    // Wait for a frame to ensure layout is ready
+    requestAnimationFrame(() => updateSlider(firstActive));
+  }
+
+  tabBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      if (btn.dataset.tab) activateTab(btn.dataset.tab);
+    });
+  });
+
+  // Handle window resize to keep slider aligned
+  window.addEventListener('resize', () => {
+    const active = document.querySelector('.tab-btn.text-white') as HTMLButtonElement;
+    if (active) updateSlider(active);
+  });
+
+  // ── Lightbox ───────────────────────────────────────────────────────────────
+  const lightbox  = document.getElementById('lightbox')!;
+  const lbImg     = document.getElementById('lb-img') as HTMLImageElement;
+  const lbCaption = document.getElementById('lb-caption')!;
+  const lbCounter = document.getElementById('lb-counter')!;
+  const lbClose   = document.getElementById('lb-close')!;
+  const lbPrev    = document.getElementById('lb-prev')!;
+  const lbNext    = document.getElementById('lb-next')!;
+
+  let currentImages: { src: string; name: string }[] = [];
+  let currentIdx = 0;
+
+  function showLightbox(images: typeof currentImages, idx: number) {
+    currentImages = images;
+    currentIdx = idx;
+    updateLightboxContent();
+    lightbox.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function updateLightboxContent() {
+    const item = currentImages[currentIdx];
+    lbImg.src = item.src;
+    lbImg.alt = item.name;
+    lbCaption.textContent = item.name;
+    lbCounter.textContent = `${currentIdx + 1} / ${currentImages.length}`;
+    lbPrev.style.display = currentIdx === 0 ? 'none' : 'flex';
+    lbNext.style.display = currentIdx === currentImages.length - 1 ? 'none' : 'flex';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  lbClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+  lbPrev.addEventListener('click', () => { if (currentIdx > 0) { currentIdx--; updateLightboxContent(); } });
+  lbNext.addEventListener('click', () => { if (currentIdx < currentImages.length - 1) { currentIdx++; updateLightboxContent(); } });
+
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.classList.contains('hidden')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft' && currentIdx > 0) { currentIdx--; updateLightboxContent(); }
+    if (e.key === 'ArrowRight' && currentIdx < currentImages.length - 1) { currentIdx++; updateLightboxContent(); }
+  });
+
+  // Wire up each panel's cards to the lightbox
+  panels.forEach((panel) => {
+    const cards = panel.querySelectorAll<HTMLElement>('[data-name]');
+    const images = Array.from(cards).map((card) => {
+      const img = card.querySelector<HTMLImageElement>('img')!;
+      return { src: img.src, name: card.dataset.name ?? '' };
+    });
+
+    cards.forEach((card, idx) => {
+      card.addEventListener('click', () => showLightbox(images, idx));
+    });
+  });
+</script>
