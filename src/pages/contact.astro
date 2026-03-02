@@ -102,27 +102,38 @@ import ctaBgImg from '@assets/images/PHOTO 35.jpg';
           <div class="absolute top-0 right-0 p-32 bg-blue-50 rounded-full blur-3xl opacity-50 -mr-16 -mt-16 pointer-events-none"></div>
           
           <h3 class="text-2xl font-bold text-slate-900 mb-6 relative z-10">Send us a message</h3>
-          <form class="space-y-6 relative z-10">
+          <form class="space-y-6 relative z-10" id="contact-form"
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            class="space-y-8 relative z-10"
+            novalidate>
+
+            <!-- Netlify hidden inputs -->
+            <input type="hidden" name="form-name" value="contact" />
+            <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label for="firstName" class="block text-sm font-semibold text-slate-700 mb-2">First Name</label>
-                <input type="text" id="firstName" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all" placeholder="John" />
+                <input name="firstName" type="text" id="firstName" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all" placeholder="John" />
               </div>
               <div>
                 <label for="lastName" class="block text-sm font-semibold text-slate-700 mb-2">Last Name</label>
-                <input type="text" id="lastName" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all" placeholder="Doe" />
+                <input name="lastName" type="text" id="lastName" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all" placeholder="Doe" />
               </div>
             </div>
 
             <div>
               <label for="email" class="block text-sm font-semibold text-slate-700 mb-2">Email Address</label>
-              <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all" placeholder="john@company.com" />
+              <input name="email" type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all" placeholder="john@company.com" />
             </div>
 
             <div>
               <label for="projectType" class="block text-sm font-semibold text-slate-700 mb-2">Project Type</label>
               <div class="relative">
-                <select id="projectType" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all bg-white appearance-none cursor-pointer">
+                <select name="projectType" id="projectType" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all bg-white appearance-none cursor-pointer">
                   <option value="" disabled selected>Select an option...</option>
                   <option value="3d-modeling">3D Structural Modeling</option>
                   <option value="shop-drawings">Shop & Fabrication Drawings</option>
@@ -139,7 +150,7 @@ import ctaBgImg from '@assets/images/PHOTO 35.jpg';
 
             <div>
               <label for="message" class="block text-sm font-semibold text-slate-700 mb-2">Message</label>
-              <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all resize-none" placeholder="Tell us about your project requirements..."></textarea>
+              <textarea name="message" id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all resize-none" placeholder="Tell us about your project requirements..."></textarea>
             </div>
 
             <button type="button" class="w-full bg-linear-to-r from-blue-600 to-teal-600 hover:opacity-90 text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">
