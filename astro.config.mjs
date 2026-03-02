@@ -9,6 +9,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  site: 'https://vinoth-akithon.github.io',
-  base: '/steel_detail/',
+  site: 'https://duinzengineering.netlify.app/',
+  // base: '/steel_detail/',
 });
