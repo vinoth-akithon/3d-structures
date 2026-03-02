@@ -34,7 +34,7 @@ export default function MobileMenu() {
             <div className="pt-4">
               <Dialog.Close asChild>
                 <a
-                  href={`${import.meta.env.BASE_URL}contact#contact-form`}
+                  href={`${import.meta.env.BASE_URL}contact#contact-form-container`}
                   className="block text-center px-6 py-3 text-sm font-semibold text-white bg-linear-to-r from-blue-600 to-teal-600  hover:opacity-90 rounded-lg shadow-md transition-all transform hover:-translate-y-0.5"
                 >
                   Work With Us
