@@ -1,10 +1,10 @@
 // Site configuration
 export const SITE = {
-  title: "Duinz",
+  title: "Duinz Engineering Services Pvt Ltd",
   description:
     "Precision structural steel 3D modeling, shop drawings, and erection detailing services using Tekla Structures.",
-  url: "https://vinoth-akithon.github.io/steel_detail",
-  author: "Duinz",
+  url: "https://duinzengineering.com",
+  author: "Duinz Engineering Services Pvt Ltd",
 } as const;
 
 export const NAVIGATION = [

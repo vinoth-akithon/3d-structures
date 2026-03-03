@@ -9,6 +9,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  site: 'https://duinzengineering.netlify.app/',
-  // base: '/steel_detail/',
+  site: process.env.URL || 'https://duinzengineering.com',
+  base: process.env.BASE_URL || '/',
 });
