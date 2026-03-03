@@ -34,12 +34,14 @@ const normalizeLink = (href: string) => `${baseUrl}${href.replace(/^\//, '')}`;
             <Mail className="w-4 h-4 mr-3 text-blue-500" />
             <a href={`mailto:${CONTACT_INFO.email}`} class="hover:text-blue-400 transition-colors">{CONTACT_INFO.email}</a>
           </div>
+          <!-- 
           {CONTACT_INFO.phone && (
           <div class="flex items-center text-sm text-slate-400">
             <Phone className="w-4 h-4 mr-3 text-blue-500" />
             <a href={`tel:${CONTACT_INFO.phone}`} class="hover:text-blue-400 transition-colors">{CONTACT_INFO.phone}</a>
           </div>
-          )}
+          )} 
+          -->
         </div>
         <div class="flex space-x-4">
           <a
