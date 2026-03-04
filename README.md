@@ -1,208 +1,105 @@
-# AstroFlow - Logistics & Manufacturing Website Template
+# Duinz Engineering Services
 
-A modern, professional Astro.js template for logistics, manufacturing, and supply chain companies. Built with React, Tailwind CSS, and TypeScript.
+Precision structural steel 3D modeling, shop drawings, and erection detailing services using Tekla Structures.
 
-![Astro](https://img.shields.io/badge/Astro-5.16.0-FF5D01?logo=astro&logoColor=white)
-![React](https://img.shields.io/badge/React-19.2.0-61DAFB?logo=react&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1.17-38B2AC?logo=tailwind-css&logoColor=white)
+## 🚀 Overview
 
-## 🖼️ Preview
+This repository contains the source code for the official website of **Duinz Engineering Services Pvt Ltd**. The site is built with a modern, high-performance stack to showcase the company's expertise in structural steel detailing and engineering solutions.
 
-### Website Screenshot
-<img alt="AstroFlow Website Preview" src="./public/AstroFlow - Astrojs Logistics & Manufacturing Website Template.png" />
+## ✨ Key Features
 
-### Performance & Speed
-<img alt="Performance Metrics" src="./public/speed-metrics.png" />
+- **Modern UI/UX**: Clean, professional design tailored for the engineering industry.
+- **Project Showcase**: Detailed view of completed projects across various regions (US, Canada, etc.).
+- **Service Highlights**: Comprehensive breakdown of engineering and detailing services.
+- **Responsive Design**: Optimized for desktops, tablets, and mobile devices.
+- **Performance Optimized**: Built with Astro 5 for blazing-fast page loads and minimal JavaScript.
 
-## ✨ Features
+## 🛠️ Tech Stack
 
-- 🚀 **Built with Astro** - Fast, modern static site generation
-- ⚛️ **React Components** - Interactive components with React
-- 🎨 **Tailwind CSS 4** - Modern utility-first styling
-- 📱 **Fully Responsive** - Mobile-first design
-- ♿ **Accessible** - Built with accessibility in mind
-- 🎯 **SEO Optimized** - Meta tags and semantic HTML
-- 🎭 **Smooth Animations** - Powered by Motion library
-- 🎨 **Modern UI** - Beautiful gradient designs and components
+- **Framework**: [Astro 5](https://astro.build/)
+- **UI Components**: [React](https://reactjs.org/) & [Radix UI](https://www.radix-ui.com/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animations**: [Motion](https://motion.dev/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Imaging**: [Sharp](https://sharp.pixelplumbing.com/) for high-quality image processing.
 
-## 📦 Pages Included
+## 📦 Project Structure
 
-- **Home** - Hero section, features, stats, testimonials
-- **Capabilities** - Service offerings showcase
-- **Use Cases** - Industry-specific solutions
-- **Facilities** - Location and facility information
-- **Request Quote (RFQ)** - Contact form for quotes
-- **Documentation** - Resources and guides
+```text
+├── src/
+│   ├── components/     # Reusable UI components
+│   ├── config/         # Site-wide configuration (site.ts)
+│   ├── layouts/        # Page layouts
+│   ├── pages/          # Astro pages (routing)
+│   └── styles/         # Global styles and Tailwind config
+├── public/             # Static assets (images, fonts, etc.)
+├── astro.config.mjs    # Astro configuration
+└── package.json        # Dependencies and scripts
+```
 
-## 🚀 Quick Start
+## 🛠️ Getting Started
 
 ### Prerequisites
 
-- Node.js 18+ and pnpm
+- [Node.js](https://nodejs.org/) (v18.0.0 or higher)
+- [pnpm](https://pnpm.io/) (Recommended)
 
 ### Installation
 
-1. Clone this repository:
-```bash
-git clone https://github.com/yourusername/astroflow.git
-cd astroflow
-```
-
+1. Clone the repository.
 2. Install dependencies:
-```bash
-pnpm install
-```
+   ```bash
+   pnpm install
+   ```
 
-3. Start the development server:
-```bash
-pnpm dev
-```
+### Development
 
-4. Open [http://localhost:4321](http://localhost:4321) in your browser
-
-## 📝 Configuration
-
-### Site Configuration
-
-Update `src/config/site.ts` with your information:
-
-```typescript
-export const SITE = {
-  title: 'Your Company Name', // TODO: Replace with your company name
-  description: 'Your company description', // TODO: Update with your description
-  url: 'https://yourdomain.com', // TODO: Replace with your actual domain
-  author: 'Your Company Name', // TODO: Replace with your company name
-} as const;
-
-export const SOCIAL_LINKS = {
-  linkedin: 'https://linkedin.com/company/yourcompany', // TODO: Replace with your LinkedIn
-  twitter: 'https://twitter.com/yourcompany', // TODO: Replace with your Twitter
-  facebook: 'https://facebook.com/yourcompany', // TODO: Replace with your Facebook
-} as const;
-```
-
-### Form Integration
-
-The RFQ form (`src/components/react/RFQForm.tsx`) currently logs form data to the console. To integrate with a backend:
-
-1. **Option 1: Form Service** (Recommended for static sites)
-   - Use [Formspree](https://formspree.io/), [Netlify Forms](https://www.netlify.com/products/forms/), or similar
-   - Update the `handleSubmit` function in `RFQForm.tsx`
-
-2. **Option 2: Custom API**
-   - Create an API endpoint
-   - Update the form submission handler
-
-Example with Formspree:
-```typescript
-const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  const formData = new FormData(e.currentTarget);
-  
-  const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-    method: 'POST',
-    body: formData,
-    headers: { 'Accept': 'application/json' }
-  });
-  
-  if (response.ok) {
-    // Show success message
-  }
-};
-```
-
-## 🛠️ Available Scripts
-
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `pnpm install`          | Installs dependencies                            |
-| `pnpm dev`          | Starts local dev server at `localhost:4321`     |
-| `pnpm build`        | Build your production site to `./dist/`         |
-| `pnpm preview`      | Preview your build locally, before deploying     |
-| `pnpm astro ...`    | Run CLI commands like `astro add`, `astro check` |
-
-## 📁 Project Structure
-
-```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── assets/          # Images and static assets
-│   ├── components/      # Reusable components
-│   │   ├── home/        # Home page components
-│   │   ├── react/       # React interactive components
-│   │   └── ui/          # UI components
-│   ├── config/          # Configuration files
-│   ├── layouts/         # Page layouts
-│   ├── pages/           # Astro pages (routes)
-│   ├── styles/          # Global styles
-│   └── utils/           # Utility functions
-├── astro.config.mjs     # Astro configuration
-├── package.json
-└── tsconfig.json
-```
-
-## 🎨 Customization
-
-### Colors
-
-The template uses Tailwind CSS. Customize colors in `src/styles/global.css` or update Tailwind config.
-
-### Images
-
-Replace placeholder images in `src/assets/` with your own. The template includes stock photos as placeholders.
-
-### Content
-
-- Update text content in component files
-- Modify navigation in `src/config/site.ts`
-- Update facility information in `src/pages/facilities.astro`
-- Customize testimonials in `src/components/home/Testimonials.astro`
-
-## 🚢 Deployment
-
-### Build for Production
+To start the development server with Hot Module Replacement (HMR):
 
 ```bash
-pnpm build
+pnpm run dev
 ```
 
-This creates a `dist/` folder with your static site.
+The site will be available at `http://localhost:4321`.
 
-### Deploy to Vercel
+### Production Build
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/astroflow)
+To build the project for production:
 
-### Deploy to Netlify
+```bash
+pnpm run build
+```
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/yourusername/astroflow)
+The output will be generated in the `dist/` directory.
 
-### Other Platforms
+### Preview
 
-The `dist/` folder can be deployed to any static hosting service:
-- GitHub Pages
-- Cloudflare Pages
-- AWS S3 + CloudFront
-- Any static hosting provider
+To preview the production build locally:
 
-## 📄 License
+```bash
+pnpm run preview
+```
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## 🌐 Forms & Lead Generation
 
-## 🤝 Contributing
+This project uses **Netlify Forms** for handling submissions without requiring a dedicated backend.
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/yourusername/astroflow/issues).
+- **Contact Form**: Located at `/contact`, handled via the `contact` form name.
+- **Careers Form**: Located at `/careers`, handled via the `careers` form name, supporting file uploads (resumes).
 
-## ⭐ Show Your Support
+Ensure the site is deployed on Netlify to enable these features automatically.
 
-If you find this template useful, please give it a star on GitHub!
+## ⚙️ Environment Variables
 
-## 📧 Support
+The project uses the following environment variables for configuration (managed in `astro.config.mjs`):
 
-For questions or support, please open an issue on GitHub.
+| Variable   | Description                                     | Default                        |
+| :--------- | :---------------------------------------------- | :----------------------------- |
+| `URL`      | The production URL of the site (`site` config). | `https://duinzengineering.com` |
+| `BASE_URL` | The base path of the site (`base` config).      | `/`                            |
 
----
+## 📝 Maintainer Notes
 
-Built with ❤️ using [Astro](https://astro.build)
+- **Configuration**: All site-wide constants (links, contact info, SEO metadata) should be managed in `src/config/site.ts`.
+- **Images**: High-resolution images are processed using Sharp. Ensure new images are placed in `public/` or `src/assets/` as needed.
+- **Styling**: The project uses Tailwind CSS v4. Custom theme configurations can be found in the CSS files.
