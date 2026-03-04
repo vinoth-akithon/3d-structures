@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
 import ctaBgImg from '@assets/images/PHOTO 35.jpg';
+import { CONTACT_INFO } from '@config/site';
 ---
 
 <BaseLayout title="Contact Us - Duinz Engineering Services">
@@ -60,11 +61,11 @@ import ctaBgImg from '@assets/images/PHOTO 35.jpg';
                 <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
               </div>
               <div>
-                <h3 class="text-lg font-bold text-slate-900 mb-1">Our Locations (India)</h3>
+                <h3 class="text-lg font-bold text-slate-900 mb-1">Our Locations</h3>
                 <div class="flex flex-wrap gap-2 mt-2">
-                  <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Tiruchirappalli</span>
-                  <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Pattukkottai</span>
-                  <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Kochi</span>
+                  {CONTACT_INFO.locations.map((location) => (
+                    <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">{location}</span>
+                  ))}
                 </div>
               </div>
             </div>

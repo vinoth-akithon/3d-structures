@@ -24,8 +24,8 @@ export const SOCIAL_LINKS = {
 
 export const CONTACT_INFO = {
   companyName: "Duinz Engineering Services Pvt Ltd",
-  locations: ["Tiruchirappalli", "Pattukkottai", "Kochi"],
+  locations: ["Tiruchirappalli, India"],
   country: "India",
-  email: "info@duinz.com",
+  email: "info@duinzengineering.com",
   phone: "+91 000 000 0000", // Placeholder as not provided
 } as const;
