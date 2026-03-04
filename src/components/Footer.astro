@@ -45,12 +45,14 @@ const normalizeLink = (href: string) => `${baseUrl}${href.replace(/^\//, '')}`;
         </div>
         <div class="flex space-x-4">
           <a
+            target="_blank"
             href={SOCIAL_LINKS.linkedin}
             class="w-10 h-10 flex items-center justify-center rounded-lg bg-slate-800 text-slate-400 hover:bg-blue-600 hover:text-white transition-all"
             aria-label="LinkedIn"
           >
             <Linkedin className="w-5 h-5" />
           </a>
+          <!-- 
           <a
             href={SOCIAL_LINKS.twitter}
             class="w-10 h-10 flex items-center justify-center rounded-lg bg-slate-800 text-slate-400 hover:bg-blue-400 hover:text-white transition-all"
@@ -65,6 +67,7 @@ const normalizeLink = (href: string) => `${baseUrl}${href.replace(/^\//, '')}`;
           >
             <Facebook className="w-5 h-5" />
           </a>
+          -->
         </div>
       </div>
 

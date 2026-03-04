@@ -17,7 +17,7 @@ export const NAVIGATION = [
 ] as const;
 
 export const SOCIAL_LINKS = {
-  linkedin: "https://linkedin.com/company/duinz-engineering",
+  linkedin: "https://www.linkedin.com/company/duinz-engineering-services-pvt-ltd",
   twitter: "https://twitter.com/duinzengineering",
   facebook: "https://facebook.com/duinzengineering",
 } as const;
