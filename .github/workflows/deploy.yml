@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - master   # since your screenshot shows master branch
+      - australia # since your screenshot shows master branch
 
 permissions:
   contents: read
