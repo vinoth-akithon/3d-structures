@@ -1,10 +1,10 @@
 // Site configuration
 export const SITE = {
-  title: "Duinz Engineering Services Pvt Ltd",
+  title: "Duinz Engineering Services | Australia",
   description:
-    "Precision structural steel 3D modeling, shop drawings, and erection detailing services using Tekla Structures.",
-  url: "https://duinzengineering.com",
-  author: "Duinz Engineering Services Pvt Ltd",
+    "Precision structural steel 3D modeling, shop drawings, and erection detailing services using Tekla Structures. Serving Australian steel fabricators, EPC contractors, and structural consultants.",
+  url: "https://duinzengineering.com.au",
+  author: "Duinz Engineering Services",
 } as const;
 
 export const NAVIGATION = [
@@ -23,9 +23,9 @@ export const SOCIAL_LINKS = {
 } as const;
 
 export const CONTACT_INFO = {
-  companyName: "Duinz Engineering Services Pvt Ltd",
-  locations: ["Tiruchirappalli, India"],
-  country: "India",
+  companyName: "Duinz Engineering Services",
+  locations: ["Australia"],
+  country: "Australia",
   email: "info@duinzengineering.com",
-  phone: "+91 000 000 0000", // Placeholder as not provided
+  phone: "", // Placeholder — update with AU contact number
 } as const;

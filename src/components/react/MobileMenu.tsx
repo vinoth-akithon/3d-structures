@@ -25,7 +25,7 @@ export default function MobileMenu() {
               <Dialog.Close asChild key={item.href}>
                 <a
                   href={fullHref}
-                  className="block px-4 py-3 text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
+                  className="block px-4 py-3 text-base font-medium text-slate-700 hover:text-emerald-700 hover:bg-emerald-50 rounded-lg transition-all"
                 >
                   {item.name}
                 </a>
@@ -35,7 +35,7 @@ export default function MobileMenu() {
               <Dialog.Close asChild>
                 <a
                   href={`${import.meta.env.BASE_URL}contact#contact-form-container`}
-                  className="block text-center px-6 py-3 text-sm font-semibold text-white bg-linear-to-r from-blue-600 to-teal-600  hover:opacity-90 rounded-lg shadow-md transition-all transform hover:-translate-y-0.5"
+                  className="block text-center px-6 py-3 text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg shadow-md transition-all transform hover:-translate-y-0.5"
                 >
                   Work With Us
                 </a>

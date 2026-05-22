@@ -27,16 +27,15 @@ const isActiveLink = (href: string) : boolean => { return href === currentPathna
     <!-- Desktop Navigation -->
     <div class="hidden lg:flex lg:items-center lg:space-x-1">
       {NAVIGATION.map((item) => {
-        // Because Astro's BASE_URL includes trailing slash differently, we need to normalize 
-        // Or simply construct the full path and check it against currentPathname
         const fullHref = `${import.meta.env.BASE_URL}${item.href === '/' ? '' : item.href.replace(/^\//, '')}`;
         const isActive = currentPathname === fullHref || currentPathname === fullHref + '/';
         return (
         <a
           href={fullHref}
-          class={`px-4 py-2 text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all relative group ${isActive ? 'nav-active' : ''}`}
+          class={`px-4 py-2 text-sm font-medium transition-colors relative group ${isActive ? 'text-emerald-700' : 'text-zinc-700 hover:text-emerald-700'}`}
         >
           {item.name}
+          <span class={`absolute bottom-0 left-0 h-[2px] bg-emerald-500 transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
         </a>
       );
       })}
@@ -46,7 +45,7 @@ const isActiveLink = (href: string) : boolean => { return href === currentPathna
     <div class="hidden lg:flex lg:items-center lg:space-x-4">
       <a
         href={`${import.meta.env.BASE_URL}contact#contact-form-container`}
-        class="inline-flex items-center px-6 py-2.5 text-sm font-semibold text-white bg-linear-to-r from-blue-600 to-teal-600 hover:opacity-90 rounded-lg shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5"
+        class="inline-flex items-center px-6 py-2.5 text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5"
       >
         Work With Us
       </a>
