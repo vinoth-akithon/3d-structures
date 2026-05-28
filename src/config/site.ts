@@ -24,8 +24,8 @@ export const SOCIAL_LINKS = {
 
 export const CONTACT_INFO = {
   companyName: "Duinz Engineering Services",
-  locations: ["Australia"],
+  locations: ["42b synnot street werribee, Australia"],
   country: "Australia",
-  email: "info@duinzengineering.com",
+  email: "info@3dstructure.com.au",
   phone: "", // Placeholder — update with AU contact number
 } as const;
