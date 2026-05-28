@@ -1,6 +1,6 @@
 ---
 import { NAVIGATION, SOCIAL_LINKS, SITE, CONTACT_INFO } from '@config/site';
-import { Package, Linkedin, Twitter, Facebook, Mail, Phone, MapPin } from 'lucide-react';
+import { Linkedin, Mail, MapPin } from 'lucide-react';
 import { Image } from 'astro:assets';
 import logo from '@assets/images/logo.jpeg';
 
@@ -9,17 +9,22 @@ const normalizeLink = (href: string) => `${baseUrl}${href.replace(/^\//, '')}`;
 ---
 
 <footer class="bg-zinc-950 text-zinc-400">
-  <div class="container mx-auto px-4 pt-16 pb-0 sm:px-6 lg:px-8">
+
+  <!-- Orange top accent bar -->
+  <div class="h-[3px] bg-orange-500"></div>
+
+  <!-- Main Footer Grid -->
+  <div class="container mx-auto px-4 pt-14 pb-0 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 gap-10 lg:grid-cols-4">
 
       <!-- Company Info -->
       <div class="lg:col-span-1 space-y-5">
         <a href={baseUrl} class="inline-flex group">
-          <div class="bg-white/90 rounded-lg px-3 py-2 group-hover:bg-white transition-colors">
+          <div class="bg-white rounded-lg px-3 py-1.5 shadow-md shadow-zinc-950/50 transition-opacity group-hover:opacity-90">
             <Image
               src={logo}
               alt="3D Structure"
-              class="h-12 sm:h-14 w-auto object-contain"
+              class="h-9 sm:h-12 w-auto object-contain max-w-[280px]"
             />
           </div>
         </a>
@@ -27,19 +32,19 @@ const normalizeLink = (href: string) => `${baseUrl}${href.replace(/^\//, '')}`;
           Precision structural steel detailing and BIM modeling — delivering fabrication-ready solutions for Australian steel fabricators and EPC contractors.
         </p>
         <div class="space-y-2.5">
-          <div class="flex items-center text-sm">
-            <MapPin className="w-4 h-4 mr-2.5 text-emerald-500 shrink-0" />
+          <div class="flex items-start text-sm gap-2.5">
+            <MapPin className="w-4 h-4 mt-0.5 text-orange-500 shrink-0" />
             <span class="text-zinc-500">{CONTACT_INFO.locations.join(' | ')}</span>
           </div>
-          <div class="flex items-center text-sm">
-            <Mail className="w-4 h-4 mr-2.5 text-emerald-500 shrink-0" />
-            <a href={`mailto:${CONTACT_INFO.email}`} class="text-zinc-500 hover:text-emerald-400 transition-colors">{CONTACT_INFO.email}</a>
+          <div class="flex items-center text-sm gap-2.5">
+            <Mail className="w-4 h-4 text-orange-500 shrink-0" />
+            <a href={`mailto:${CONTACT_INFO.email}`} class="text-zinc-500 hover:text-orange-400 transition-colors">{CONTACT_INFO.email}</a>
           </div>
         </div>
         <a
           target="_blank"
           href={SOCIAL_LINKS.linkedin}
-          class="inline-flex w-9 h-9 items-center justify-center rounded-lg bg-zinc-800 text-zinc-400 hover:bg-emerald-600 hover:text-white transition-all"
+          class="inline-flex w-9 h-9 items-center justify-center rounded-lg bg-zinc-800 text-zinc-400 hover:bg-orange-500 hover:text-white transition-all"
           aria-label="LinkedIn"
         >
           <Linkedin className="w-4 h-4" />
@@ -49,15 +54,15 @@ const normalizeLink = (href: string) => `${baseUrl}${href.replace(/^\//, '')}`;
       <!-- Quick Links -->
       <div>
         <h3 class="text-xs font-semibold uppercase tracking-widest text-zinc-300 mb-2">Quick Links</h3>
-        <div class="w-8 h-0.5 bg-emerald-500 mb-5"></div>
+        <div class="w-8 h-0.5 bg-orange-500 mb-5"></div>
         <ul class="space-y-2.5">
           {NAVIGATION.map((item) => (
             <li>
               <a
                 href={normalizeLink(item.href)}
-                class="text-sm text-zinc-500 hover:text-emerald-400 transition-colors inline-flex items-center group"
+                class="text-sm text-zinc-500 hover:text-orange-400 transition-colors inline-flex items-center group"
               >
-                <span class="w-0 group-hover:w-2 h-0.5 bg-emerald-400 transition-all duration-200 mr-0 group-hover:mr-2 shrink-0"></span>
+                <span class="w-0 group-hover:w-2 h-0.5 bg-orange-400 transition-all duration-200 mr-0 group-hover:mr-2 shrink-0"></span>
                 {item.name}
               </a>
             </li>
@@ -68,29 +73,29 @@ const normalizeLink = (href: string) => `${baseUrl}${href.replace(/^\//, '')}`;
       <!-- Services -->
       <div>
         <h3 class="text-xs font-semibold uppercase tracking-widest text-zinc-300 mb-2">Services</h3>
-        <div class="w-8 h-0.5 bg-emerald-500 mb-5"></div>
+        <div class="w-8 h-0.5 bg-orange-500 mb-5"></div>
         <ul class="space-y-2.5">
           <li>
-            <a href={normalizeLink('/services')} class="text-sm text-zinc-500 hover:text-emerald-400 transition-colors inline-flex items-center group">
-              <span class="w-0 group-hover:w-2 h-0.5 bg-emerald-400 transition-all duration-200 mr-0 group-hover:mr-2 shrink-0"></span>
+            <a href={normalizeLink('/services')} class="text-sm text-zinc-500 hover:text-orange-400 transition-colors inline-flex items-center group">
+              <span class="w-0 group-hover:w-2 h-0.5 bg-orange-400 transition-all duration-200 mr-0 group-hover:mr-2 shrink-0"></span>
               3D Structural Modeling
             </a>
           </li>
           <li>
-            <a href={normalizeLink('/services')} class="text-sm text-zinc-500 hover:text-emerald-400 transition-colors inline-flex items-center group">
-              <span class="w-0 group-hover:w-2 h-0.5 bg-emerald-400 transition-all duration-200 mr-0 group-hover:mr-2 shrink-0"></span>
+            <a href={normalizeLink('/services')} class="text-sm text-zinc-500 hover:text-orange-400 transition-colors inline-flex items-center group">
+              <span class="w-0 group-hover:w-2 h-0.5 bg-orange-400 transition-all duration-200 mr-0 group-hover:mr-2 shrink-0"></span>
               Shop & Fabrication Drawings
             </a>
           </li>
           <li>
-            <a href={normalizeLink('/services')} class="text-sm text-zinc-500 hover:text-emerald-400 transition-colors inline-flex items-center group">
-              <span class="w-0 group-hover:w-2 h-0.5 bg-emerald-400 transition-all duration-200 mr-0 group-hover:mr-2 shrink-0"></span>
+            <a href={normalizeLink('/services')} class="text-sm text-zinc-500 hover:text-orange-400 transition-colors inline-flex items-center group">
+              <span class="w-0 group-hover:w-2 h-0.5 bg-orange-400 transition-all duration-200 mr-0 group-hover:mr-2 shrink-0"></span>
               Erection Drawings
             </a>
           </li>
           <li>
-            <a href={normalizeLink('/services')} class="text-sm text-zinc-500 hover:text-emerald-400 transition-colors inline-flex items-center group">
-              <span class="w-0 group-hover:w-2 h-0.5 bg-emerald-400 transition-all duration-200 mr-0 group-hover:mr-2 shrink-0"></span>
+            <a href={normalizeLink('/services')} class="text-sm text-zinc-500 hover:text-orange-400 transition-colors inline-flex items-center group">
+              <span class="w-0 group-hover:w-2 h-0.5 bg-orange-400 transition-all duration-200 mr-0 group-hover:mr-2 shrink-0"></span>
               Connection Detailing
             </a>
           </li>
@@ -100,38 +105,38 @@ const normalizeLink = (href: string) => `${baseUrl}${href.replace(/^\//, '')}`;
       <!-- Get Started -->
       <div>
         <h3 class="text-xs font-semibold uppercase tracking-widest text-zinc-300 mb-2">Get Started</h3>
-        <div class="w-8 h-0.5 bg-emerald-500 mb-5"></div>
+        <div class="w-8 h-0.5 bg-orange-500 mb-5"></div>
         <ul class="space-y-2.5 mb-8">
           <li>
-            <a href={normalizeLink('/contact')} class="text-sm text-zinc-500 hover:text-emerald-400 transition-colors inline-flex items-center group">
-              <span class="w-0 group-hover:w-2 h-0.5 bg-emerald-400 transition-all duration-200 mr-0 group-hover:mr-2 shrink-0"></span>
+            <a href={normalizeLink('/contact')} class="text-sm text-zinc-500 hover:text-orange-400 transition-colors inline-flex items-center group">
+              <span class="w-0 group-hover:w-2 h-0.5 bg-orange-400 transition-all duration-200 mr-0 group-hover:mr-2 shrink-0"></span>
               Contact Us
             </a>
           </li>
           <li>
-            <a href={normalizeLink('/projects')} class="text-sm text-zinc-500 hover:text-emerald-400 transition-colors inline-flex items-center group">
-              <span class="w-0 group-hover:w-2 h-0.5 bg-emerald-400 transition-all duration-200 mr-0 group-hover:mr-2 shrink-0"></span>
+            <a href={normalizeLink('/projects')} class="text-sm text-zinc-500 hover:text-orange-400 transition-colors inline-flex items-center group">
+              <span class="w-0 group-hover:w-2 h-0.5 bg-orange-400 transition-all duration-200 mr-0 group-hover:mr-2 shrink-0"></span>
               View Our Projects
             </a>
           </li>
+          <li>
+            <a href={normalizeLink('/careers')} class="text-sm text-zinc-500 hover:text-orange-400 transition-colors inline-flex items-center group">
+              <span class="w-0 group-hover:w-2 h-0.5 bg-orange-400 transition-all duration-200 mr-0 group-hover:mr-2 shrink-0"></span>
+              Careers
+            </a>
+          </li>
         </ul>
-        <a
-          href={normalizeLink('/contact#contact-form-container')}
-          class="inline-flex items-center px-5 py-2.5 text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-700 rounded-lg transition-all transform hover:-translate-y-0.5 shadow-md hover:shadow-lg"
-        >
-          Work With Us
-          <svg class="w-3.5 h-3.5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-        </a>
       </div>
 
     </div>
 
     <!-- Bottom Bar -->
-    <div class="mt-14 py-6 border-t border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-3">
+    <div class="mt-12 py-6 border-t border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-3">
       <p class="text-xs text-zinc-600">
         &copy; {new Date().getFullYear()} {SITE.author}. All rights reserved.
       </p>
       <p class="text-xs text-zinc-700">Structural Steel Detailing & BIM Modeling — Australia</p>
     </div>
   </div>
+
 </footer>
