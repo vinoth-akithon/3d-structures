@@ -1,10 +1,10 @@
 // Site configuration
 export const SITE = {
-  title: "Duinz Engineering Services | Australia",
+  title: "3D Structure | Australia",
   description:
     "Precision structural steel 3D modeling, shop drawings, and erection detailing services using Tekla Structures. Serving Australian steel fabricators, EPC contractors, and structural consultants.",
-  url: "https://duinzengineering.com.au",
-  author: "Duinz Engineering Services",
+  url: "https://3dstructure.com.au",
+  author: "3D Structure",
 } as const;
 
 export const NAVIGATION = [
@@ -17,13 +17,13 @@ export const NAVIGATION = [
 ] as const;
 
 export const SOCIAL_LINKS = {
-  linkedin: "https://www.linkedin.com/company/duinz-engineering-services-pvt-ltd",
-  twitter: "https://twitter.com/duinzengineering",
-  facebook: "https://facebook.com/duinzengineering",
+  linkedin: "https://www.linkedin.com/company/3dstructure",
+  twitter: "https://twitter.com/3dstructure",
+  facebook: "https://facebook.com/3dstructure",
 } as const;
 
 export const CONTACT_INFO = {
-  companyName: "Duinz Engineering Services",
+  companyName: "3D Structure",
   locations: ["42b synnot street werribee, Australia"],
   country: "Australia",
   email: "info@3dstructure.com.au",

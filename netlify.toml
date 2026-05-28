@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "https://duinzengineering.netlify.app/*"
-  to = "https://duinzengineering.com/:splat"
+  from = "https://3dstructure.netlify.app/*"
+  to = "https://3dstructure.com.eu/:splat"
   status = 301
   force = true
